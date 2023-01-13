@@ -6,6 +6,10 @@ $movie_1 = new Movie("Pippi e i Funghi Dell'Est", "Fantasy", "Curcumo");
 
 echo '<pre>' , var_dump($movie_1) , '</pre>';
 
+$movie_2 = new Movie("Pippi ed il regno degli Dei", "Sci-Fi", "Tungsten");
+
+echo '<pre>' , var_dump($movie_2) , '</pre>';
+
 ?>
 
 
