@@ -5,13 +5,16 @@ class Movie
     private $name;
     private $language;
     private $genre;
+    public $vote;
 
-    function __construct($_name, $_genre, $_language)
-    { {
+    function __construct($_name, $_genre, $_language, $_vote)
+    {
 
-            $this->setName($_name);
-            $this->setLanguage($_language);
-            $this->setGenre($_genre);
+        $this->setName($_name);
+        $this->setLanguage($_language);
+        $this->setGenre($_genre);
+        if ($_vote != null) {
+            $this->setVote($_vote);
         }
     }
     /**
@@ -30,8 +33,6 @@ class Movie
     public function setName($name)
     {
         $this->name = $name;
-
-        return $this;
     }
 
     /**
@@ -50,8 +51,6 @@ class Movie
     public function setLanguage($language)
     {
         $this->language = $language;
-
-        return $this;
     }
 
     /**
@@ -70,7 +69,40 @@ class Movie
     public function setGenre($genre)
     {
         $this->genre = $genre;
+    }
 
-        return $this;
+    /**
+     * Get the value of vote
+     */
+    public function getVote()
+    {
+
+
+        return $this->vote;
+    }
+
+    /**
+     * Set the value of vote
+     *
+     * @return  self
+     */
+    public function setVote($vote)
+    {
+        if ($vote === "1") {
+
+            $vote = "Muy Bad";
+
+            $this->vote = $vote;
+        } else if ($vote === "2" || $vote === "3") {
+
+            $vote = "So so";
+
+            $this->vote = $vote;
+        } else if ($vote === "4" || $vote === "5") {
+
+            $vote = "Beatiful";
+
+            $this->vote = $vote;
+        }
     }
 }
